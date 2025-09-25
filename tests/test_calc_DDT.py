@@ -1,6 +1,4 @@
 import pytest
-
-
 def test_first():
     name = "Boris"
     assert name == 'Boris', "Not upper"
