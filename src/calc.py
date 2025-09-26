@@ -15,7 +15,7 @@ class Calc:
         _validated_data(a, b)
         if b != 0:
             return a / b
-        return "ZeroDivisionError"
+        raise ZeroDivisionError('Division by  zero')
 
     def mult(self, a, b):
         _validated_data(a, b)

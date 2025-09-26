@@ -29,7 +29,7 @@ def test_add(calc, a, b, expected):
     (2, 10, 0.2),
     (1, 3, 1 / 3),
     (0, 1, 0),
-    (1, 0, "ZeroDivisionError"),
+    (1, 0, ZeroDivisionError),
     ("a", 0, TypeError),
     (0, "a", TypeError),
 ])
