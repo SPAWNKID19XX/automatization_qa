@@ -1,4 +1,6 @@
 import time
+from time import sleep
+
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
@@ -6,6 +8,7 @@ from selenium.webdriver.chrome.service import Service
 URL_TEST = "http://www.python.org"
 URL_TEST1 = "http://www.google.com"
 URL_TEST3 = "https://pythonbasics.org/selenium-get-html/"
+URL_TEST4 = "https://olx.pt/"
 
 
 
@@ -35,6 +38,16 @@ print(url3_title)
 print(url3)
 
 print('Expected page. Checking if url and title is expected: ', url3 == URL_TEST3 and url3_title =='Selenium get HTML source in Python - Python Tutorial')
+
+driver.get(URL_TEST4)
+print(URL_TEST4 ,' Opened')
+
+
+button_accept_pp = driver.find_element('id', 'onetrust-accept-btn-handler')
+button_accept_pp.click()
+print(f'Element button {button_accept_pp.text} finded and clicked')
+time.sleep(5)
+
 
 
 
