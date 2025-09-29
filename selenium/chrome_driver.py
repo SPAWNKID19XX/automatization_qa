@@ -1,5 +1,6 @@
 import time
 from time import sleep
+from selenium.webdriver.common.by import By
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -9,6 +10,7 @@ URL_TEST = "http://www.python.org"
 URL_TEST1 = "http://www.google.com"
 URL_TEST3 = "https://pythonbasics.org/selenium-get-html/"
 URL_TEST4 = "https://olx.pt/"
+URL_TEST5 = "https://webtech87.pt/"
 
 
 
@@ -46,7 +48,15 @@ print(URL_TEST4 ,' Opened')
 button_accept_pp = driver.find_element('id', 'onetrust-accept-btn-handler')
 button_accept_pp.click()
 print(f'Element button {button_accept_pp.text} finded and clicked')
-time.sleep(5)
+
+print('===============find elements==================='.upper())
+
+driver.get(URL_TEST5)
+a = driver.find_elements("class name", "nav-links")[0].find_elements("tag name","a")
+
+print(len(a))
+for obj in a:
+    print(obj.accessible_name)
 
 
 
