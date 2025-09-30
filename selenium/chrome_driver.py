@@ -57,6 +57,8 @@ a = driver.find_elements("class name", "nav-links")[0].find_elements("tag name",
 print(len(a))
 for obj in a:
     print(obj.accessible_name)
+    obj.click()
+    sleep(2)
 
 
 
